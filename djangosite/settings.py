@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = "staticfiles"     #追記
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)  #追記
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)  #追記
 
 LOGIN_REDIRECT_URL = 'sourcebook:Index'
 LOGOUT_REDIRECT_URL = 'sourcebook:Index'
