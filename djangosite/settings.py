@@ -14,13 +14,14 @@ import os
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'e!s%y7z-@j77m=ij#+aa&1l6vio(up*68q$ckgk4sy-jy9^wy5'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -126,7 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = "staticfiles"
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 LOGIN_REDIRECT_URL = 'sourcebook:Index'
 LOGOUT_REDIRECT_URL = 'sourcebook:Index'
 
@@ -136,9 +138,15 @@ except ImportError:
     pass
 
 if not DEBUG:
-    #SECRET_KEY = os.environ['SECRET_KEY']
     import django_heroku
     django_heroku.settings(locals())
 
 db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES['default'].update(db_from_env)
+
+# Parse database configuration from $DATABASE_URL
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
