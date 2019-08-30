@@ -1,0 +1,7 @@
+/* ulの設定 */
+.accordion {text-align: left; padding-top: 1rem}
+.accordion .inner{display: none}
+.accordion p{cursor: pointer; text-decoration: underline}
+.accordion p::before{content: "◆"}
+.accordion a{text-decoration: none; color: gray}
+.accordion a:hover {font-size: 1.5em; font-weight: bold}

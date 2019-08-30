@@ -1,0 +1,36 @@
+{% extends 'sourcebook/base.html' %}
+
+{% block content %}
+<h3> - {{ title }} - </h3>
+
+{% for value in source %}
+    {% if value.text_flg == 0 %}
+    <a ondblclick="location.href='update/{{ value.id }}'">
+        <div>{{ value.text }}</div>
+    </a>    
+    {% elif value.text_flg == 1 %}
+    <a ondblclick="location.href='update/{{ value.id }}'">
+        <pre class="prettyprint" style="background-color: white">{{ value.text }}</pre>
+    </a>
+    {% endif %}
+{% endfor %}
+<p><form action="" method="POST">
+    {% csrf_token %}
+    <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">＋</button>
+    <div class="collapse" id="collapseExample">
+        <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#text_box" aria-expanded="false" aria-controls="collapseExample">コメント：</button>
+        <div class="collapse" id="text_box">
+            <input type="text" size="41" name="TxtComment"><br>
+            <button type="submit" class="btn btn-dark" name="BtnRgsBox">登録</button>
+        </div><br>
+        <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#text_area" aria-expanded="false" aria-controls="collapseExample">コード　：</button>
+        <div class="collapse" id="text_area">    
+            <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name='TxtCode'></textarea>
+                <button type="submit" class="btn btn-dark" name="BtnRgsArea">登録</button>
+            </div>
+        </div>
+    </div>
+</form></p>
+
+{% endblock %}

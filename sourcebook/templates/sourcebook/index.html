@@ -1,0 +1,54 @@
+{% extends 'sourcebook/base.html' %}
+
+{% block content %}
+<h3> - Welcome to R.Y's Source Book - </h3><br>
+
+<ul class="accordion">
+    <p>プログラム言語</p>
+    <ul class="inner">
+        <ul class="accordion">
+            <p>バックエンド言語</p>
+            <ul class="inner">
+                <li><a href="book/1/">C</a></li>
+                <li><a href="book/2/">Java</a></li>
+                <li><a href="book/3/">Python</a></li>
+            </ul>
+        </ul>
+        <ul class="accordion">
+            <p>フロントエンド言語</p>
+            <ul class="inner">
+                <li><a href="book/4/">HTML</a></li>
+                <li><a href="book/5/">css</a></li>
+                <li><a href="book/6/">Java Script</a></li>
+            </ul>
+        </ul>
+        <ul class="accordion">
+            <p>その他</p>
+            <ul class="inner">
+                <li><a href="book/7/">SQL</a></li>
+                <li><a href="book/8/">Visual Basic</a></li>
+                <li><a href="book/9/">VBA</a></li>
+            </ul>
+        </ul>
+    </ul>
+</ul>
+<ul class="accordion">
+    <p>フレームワーク・ライブラリ</p>
+    <ul class="inner">
+        <ul class="accordion">
+            <p>Webアプリ系</p>
+            <ul class="inner">
+                <li><a href="book/10/">Django</a></li>
+                <li><a href="book/11/">Bootstrap</a></li>
+                <li><a href="book/12/">jQuery</a></li>
+            </ul>
+        </ul>
+        <ul class="accordion">
+            <p>ユーティリティ系</p>
+            <ul class="inner">
+            </ul>
+        </ul>
+    </ul>
+</ul>
+
+{% endblock %}

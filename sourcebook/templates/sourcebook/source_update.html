@@ -1,0 +1,16 @@
+{% extends 'sourcebook/base.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name='TxtSource'>{{text}}</textarea>
+    <button type="submit" class="btn btn-dark" name="BtnUpdate">更新</button>
+    <button type="submit" class="btn btn-danger" name="BtnDelete">削除</button>
+    <div align="right">
+        <button type="submit" class="btn btn-secondary" name="BtnBack">戻る</button>
+    </div>
+</form>
+
+
+{% endblock %}
