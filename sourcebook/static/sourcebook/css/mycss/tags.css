@@ -7,15 +7,8 @@ header{
     border-bottom-color: white;
     border-bottom-style: solid;
 }
-header a{
-    color: white;
-    text-decoration: none;
-    font-family: Century;
-}
-header a:hover{
-    color: gray;
-    text-decoration: none;
-}
+header a{color: white; text-decoration: none; font-family: Century;}
+header a:hover{color: gray; text-decoration: none;}
 
 footer{
     margin-top: 5rem;
@@ -23,7 +16,6 @@ footer{
     border-top-style: solid;
     text-align: center;
 }
-
 
 h3{
     text-align: center;

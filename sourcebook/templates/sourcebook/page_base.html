@@ -6,7 +6,7 @@
 {% for value in source %}
     {% if value.text_flg == 0 %}
     <a ondblclick="location.href='update/{{ value.id }}'">
-        <pre style="color: white">{{ value.text }}</pre>
+        <pre style="color: white; white-space: pre-wrap; overflow: auto; white-space: pre-wrap; word-wrap: break-word;">{{ value.text }}</pre>
     </a> 
     {% elif value.text_flg == 1 %}
     <a ondblclick="location.href='update/{{ value.id }}'">
