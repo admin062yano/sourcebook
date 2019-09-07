@@ -4,4 +4,4 @@
 .accordion p{cursor: pointer; text-decoration: underline}
 .accordion p::before{content: "◆"}
 .accordion a{text-decoration: none; color: gray}
-.accordion a:hover {font-size: 1.5em; font-weight: bold}
+.accordion a:hover {color: #bbb; font-weight: bold}
