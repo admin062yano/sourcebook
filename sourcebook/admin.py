@@ -13,3 +13,10 @@ class PageAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'name')
 
 admin.site.register(Page, PageAdmin)
+
+
+class SourceAdmin(admin.ModelAdmin):
+    list_display = ('id', 'page')
+    list_display_links = ('id', 'page')
+
+admin.site.register(Source, SourceAdmin)
