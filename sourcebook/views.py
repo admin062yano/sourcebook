@@ -49,7 +49,6 @@ class PageView(LoginRequiredMixin, TemplateView):
         except:
             self.context['title'] = 'Page Error'
             self.context['source'] = 'Source Error'
-
         return render(request, self.template_name, self.context)
 
     def post(self, request, book, page):
@@ -60,7 +59,6 @@ class PageView(LoginRequiredMixin, TemplateView):
             elif 'BtnRgsArea' in request.POST:
                 if request.POST.get('TxtCode') != "":
                     Source(page_id=page, text=request.POST.get('TxtCode'), text_flg=1).save()
-
         return redirect('sourcebook:Page', book=book, page=page)
 
 
@@ -93,7 +91,6 @@ class SourceUpdateView(LoginRequiredMixin, TemplateView):
             except:
                 # 更新できませんでしたのメッセージ
                 pass
-
         return redirect('sourcebook:Page', book=book, page=page)
         
 

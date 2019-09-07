@@ -3,6 +3,8 @@
 {% block content %}
 <h3> - {{ title }} - </h3>
 
+{{ page }}
+
 <ul class="accordion">
 {% for value in page %}
     <li><a href="page/{{ value.id }}">{{ value.name }}</a></li>
