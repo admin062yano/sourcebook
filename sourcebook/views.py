@@ -20,7 +20,7 @@ def book(request, book):
         book_query = Book.objects.filter(id=book)
         for tmp in book_query:
             title = tmp.name
-        page_query = Page.objects.filter(book_id=book)
+        page_query = Page.objects.filter(book_id=book).order_by('id')
     except:
         title = 'Book Error'
         page_query = 'Page Error'
@@ -43,7 +43,8 @@ class PageView(LoginRequiredMixin, TemplateView):
             page_query = Page.objects.filter(id=page)
             for tmp in page_query:
                 self.context['title'] = tmp.name
-            self.context['source'] = Source.objects.filter(page_id=page)
+                
+            self.context['source'] = Source.objects.filter(page_id=page).order_by('id')
             self.context['text'] = 'test'
 
         except:
