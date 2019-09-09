@@ -10,25 +10,37 @@ def index(request):
     """IndexView"""
     template_name = 'sourcebook/index.html'
     return render(request, template_name)
-
-
-@login_required
-def book(request, book):
+    
+    
+class BookView(LoginRequiredMixin, TemplateView):
     """book"""
-    template_name = 'sourcebook/book_base.html'
-    try:
-        book_query = Book.objects.filter(id=book)
-        for tmp in book_query:
-            title = tmp.name
-        page_query = Page.objects.filter(book_id=book).order_by('id')
-    except:
-        title = 'Book Error'
-        page_query = 'Page Error'
-    context = {
-        'title':title,
-        'page':page_query,
-    }
-    return render(request, template_name, context)
+    def __init__(self):
+        self.template_name = 'sourcebook/book_base.html'
+        self.context = {}
+
+
+    def get(self, request, book):
+        try:
+            book_query = Book.objects.filter(id=book)
+            for tmp in book_query:
+                title = tmp.name
+            page_query = Page.objects.filter(book_id=book).order_by('id')
+        except:
+            title = 'Book Error'
+            page_query = 'Page Error'
+        self.context = {
+            'title':title,
+            'page':page_query,
+        }
+        return render(request, self.template_name, self.context)
+
+    def post(self, request, book):
+        if request.method == 'POST':
+            if 'BtnRgsPage' in request.POST:
+                if request.POST.get('TxtPage') != "":
+                    Page(book_id=book, name=request.POST.get('TxtPage')).save()
+
+        return redirect('sourcebook:Book', book=book)
 
 
 class PageView(LoginRequiredMixin, TemplateView):

@@ -8,4 +8,15 @@
     <li><a href="page/{{ value.id }}">{{ value.name }}</a></li>
 {% endfor %}
 </ul>
+<p><form action="" method="POST">
+    {% csrf_token %}
+    <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">＋</button>
+    <div class="collapse" id="collapseExample">
+        <label>タイトル：</label>
+        <input type="text" size="30" name="TxtPage" >
+        <button type="submit" class="btn btn-dark" name="BtnRgsPage">登録</button>
+    </div>
+</form></p>
+
+
 {% endblock %}
