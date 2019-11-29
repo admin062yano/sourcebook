@@ -3,5 +3,5 @@
 .accordion .inner{display: none}
 .accordion p{cursor: pointer; text-decoration: underline}
 .accordion p::before{content: "◆"}
-.accordion a{text-decoration: none; color: gray}
-.accordion a:hover {color: white; font-weight: bold}
+.accordion a{text-decoration: none; color: white}
+.accordion a:hover {color: gray; font-weight: bold}
