@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap4',
     'sourcebook',
 ]
 
@@ -121,18 +120,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = "staticfiles"     #追記
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)  #追記
+STATIC_ROOT = "staticfiles"
 
 LOGIN_REDIRECT_URL = 'sourcebook:Index'
 LOGOUT_REDIRECT_URL = 'sourcebook:Index'
 
-### 以下追記 ###
-# Parse database configuration from $DATABASE_URL
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

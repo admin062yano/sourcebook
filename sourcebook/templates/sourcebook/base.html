@@ -13,6 +13,7 @@
 
   <!-- bootstrap4 -->
   <link rel="stylesheet" href="{% static 'sourcebook/css/bootstrap.min.css' %}">
+  <!-- googleのやつ -->
 
   <link rel="stylesheet" href="{% static 'sourcebook/css/prettify.css' %}">
   <!-- original css -->
@@ -42,20 +43,6 @@
       </div>
     </nav>
   </header>
-<!-- navberの残骸
-    <nav class="navbar navbar-expand-md  navbar-dark">
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-navi" aria-controls="bs-navi" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="bs-navi">
-        <ul class="navbar-nav navbar-right">
-          <li class="nav-item"><a class="nav-link" href="{% url 'admin:sourcebook_page_add' %}">admin</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">log out</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
-        </ul>
-      </div>
-    </nav>
--->
   {% endblock %}
 
   <!-- main content -->
@@ -67,7 +54,7 @@
   <!-- footer -->
   {% block footer %}
     <footer>
-      <p>© 2019 R.Y. All Rights Reserved.</p>
+      <p style="text-align: center">© 2019 R.Y. All Rights Reserved.</p>
     </footer>
   {% endblock %}
   <!-- jquery and bootstrap4 -->
